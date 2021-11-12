@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+  <%= render partial: 'sidemenu' %>
+    <div class="col-md-8">
+      <h2>Books</h2>
+      <table class="table">
+        <thead>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+          <th colspan="3"></th>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+          <td></td>
+          <td><%= book.title %></td>
+          <td><%= book.opinion %></td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

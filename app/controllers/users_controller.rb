@@ -18,6 +18,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id == current_user.id
+      render :edit
+    else
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update
@@ -34,8 +39,5 @@ class UsersController < ApplicationController
 
   def user_params
   params.require(:user).permit(:name, :profile_image, :introduction)
-  end
-  def book_params
-  params.require(:book).permit(:title, :body)
   end
 end
